@@ -1,0 +1,26 @@
+{
+    "Title": "Examining Zero-Shot Vulnerability Repair with Large Language Models",
+    "Doi": "10.1109/SP46215.2023.10179420",
+    "Authors": [
+        "hammond pearce",
+        "benjamin tan",
+        "baleegh ahmad",
+        "ramesh karri",
+        "brendan dolan-gavitt"
+    ],
+    "Key Words": [
+        "privacy",
+        "codes",
+        "computer bugs",
+        "natural languages",
+        "closed box",
+        "maintenance engineering",
+        "computer crime",
+        "cybersecurity",
+        "ai",
+        "code generation",
+        "cwe"
+    ],
+    "Abstract": "human developers can produce code with cybersecurity bugs. can emerging \u2018smart\u2019 code completion tools help repair those bugs? in this work, we examine the use of large language models (llms) for code (such as openai\u2019s codex and ai21\u2019s jurassic j-1) for zero-shot vulnerability repair. we investigate challenges in the design of prompts that coax llms into generating repaired versions of insecure code. this is difficult due to the numerous ways to phrase key information\u2014 both semantically and syntactically\u2014with natural languages. we perform a large scale study of five commercially available, black-box, \"off-the-shelf\" llms, as well as an open-source model and our own locally-trained model, on a mix of synthetic, hand-crafted, and real-world security bug scenarios. our experiments demonstrate that while the approach has promise (the llms could collectively repair 100% of our synthetically generated and hand-crafted scenarios), a qualitative evaluation of the model\u2019s performance over a corpus of historical real-world examples highlights challenges in generating functionally correct code.",
+    "Pub Date": "2023-05-25"
+}

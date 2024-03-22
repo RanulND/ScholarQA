@@ -1,0 +1,29 @@
+{
+    "Title": "I2MVFormer: Large Language Model Generated Multi-View Document Supervision for Zero-Shot Image Classification",
+    "Doi": "10.1109/CVPR52729.2023.01456",
+    "Authors": [
+        "muhammad ferjad naeem",
+        "muhammad gul zain ali khan",
+        "yongqin xian",
+        "muhammad zeshan afzal",
+        "didier stricker",
+        "luc van gool",
+        "federico tombari"
+    ],
+    "Key Words": [
+        "knowledge engineering",
+        "computational modeling",
+        "semantics",
+        "memory management",
+        "encyclopedias",
+        "transformers",
+        "pattern recognition",
+        "transfer",
+        "meta",
+        "low-shot",
+        "continual",
+        "or long-tail learning}"
+    ],
+    "Abstract": "recent works have shown that unstructured text (doc-uments) from online sources can serve as useful auxiliary information for zero-shot image classification. however, these methods require access to a high-quality source like wikipedia and are limited to a single source of information. large language models (llm) trained on web-scale text show impressive abilities to repurpose their learned knowledge for a multitude of tasks. in this work, we provide a novel perspective on using an llm to provide text supervision for a zero-shot image classification model. the llm is provided with a few text descriptions from different annota-tors as examples. the llm is conditioned on these exam-ples to generate multiple text descriptions for each class (re-ferred to as views). our proposed model, i2mvformer, learns multi-view semantic embeddings for zero-shot image classification with these class views. we show that each text view of a class provides complementary information allowing a model to learn a highly discriminative class embed-ding. moreover, we show that i2mvformer is better at consuming the multi-view text supervision from llm compared to baseline models. i2mvformer establishes a new state-of-the-art on three public benchmark datasets for zero-shot image classification with unsupervised semantic embeddings.",
+    "Pub Date": "2023-06-24"
+}
