@@ -1,12 +1,9 @@
-# json
+json
 langchain
-chromadb
 pandas
 transformers
 datetime
 torch==2.2.0
 torchvision==0.17.0
-faiss
-openpyxl
 faiss
 openpyxl

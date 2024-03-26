@@ -4,7 +4,19 @@ from datetime import datetime
 import re
 
 
-class Preprocssing:
+class Preprocessing:
+
+  """
+    
+    this class is defined to apply basic pre-processing steps for the initial dataframe.
+
+    inputs 
+      file: an excel that contains all the raw abstracts
+      abbr: a text file that contains long forms of the abbreviations
+    output 
+      processed dataframe
+
+    """
 
   def __init__(self,file, abbr):
     self.file = file
@@ -15,13 +27,6 @@ class Preprocssing:
   # to get authors and keywords into a list into the
   def stringsToList(self, author):
     return [s.lower().strip() for s in author.split(";")]
-  
-  # change date format
-  def dateFormatter(self, date):
-      # date_obj = datetime.strptime(date, '%d-%b-%y')
-      # formatted_date = date_obj.strftime('%Y-%m-%d')
-      formatted_date = date.dt.strftime('%Y-%m-%d')
-      return formatted_date
 
   # remove unnecessary characters
   def removeUnwantedCharacters(self, text):
@@ -61,7 +66,7 @@ class Preprocssing:
       return text
 
   # remobe unwanted characters
-  def cleaningText(text):
+  def cleaningText(self, text):
     pattern_1 = r'\[\s*[0-9]+\s*\]'
     cleaned_text = re.sub(pattern_1,"",text)
     pattern_2 = r'\'s'
@@ -80,11 +85,10 @@ class Preprocssing:
     self.df['Abstract'] = self.df['Abstract'].str.lower()
     self.df['Abstract'] = self.df['Abstract'].apply(self.replace_abbreviations)
     self.df['Abstract'] = self.df['Abstract'].apply(self.cleaningText)
+    
 
     self.df['Authors'] = self.df['Authors'].apply(self.stringsToList)
     self.df['Key Words'] = self.df['Key Words'].apply(self.stringsToList)
-    # self.df['Pub Date'] = self.df['Pub Date'].apply(self.dateFormatter)
+    self.df['Pub Date'] = self.df['Pub Date'].astype(str) # convert date type to strig
 
     return self.df # return the df
-
-# df['Pub Date'][1] = "17-Jun-23"

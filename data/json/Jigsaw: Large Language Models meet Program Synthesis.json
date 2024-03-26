@@ -1,0 +1,26 @@
+{
+    "Title": "Jigsaw: Large Language Models meet Program Synthesis",
+    "Doi": "10.1145/3510003.3510203",
+    "Authors": [
+        "naman jain",
+        "skanda vaidyanath",
+        "arun iyer",
+        "nagarajan natarajan",
+        "suresh parthasarathy",
+        "sriram rajamani",
+        "rahul sharma"
+    ],
+    "Key Words": [
+        "productivity",
+        "analytical models",
+        "codes",
+        "semantics",
+        "natural languages",
+        "buildings",
+        "syntactics",
+        "program synthesis",
+        "machine learning"
+    ],
+    "Abstract": "large pre trained language models such as gpt-3  codex  and coogle language model  are now capable of generating code from natural language specifications of programmer intent. we view these developments with a mixture of optimism and caution. on the optimistic side such large language models have the potential to improve productivity by providing an automated artificial intelliegence pair programmer for every programmer in the world. on the cautionary side since these large language models do not understand program semantics they offer no guarantees about quality of the suggested code. in this paper we present an approach to augment these large language models with post processing steps based on program analysis and synthesis techniques that understand the syntax and semantics of programs. further we show that such techniques can make use of user feedback and improve with usage. we present our experiences from building and evaluating such a tool jigsaw targeted at synthesizing code for using python pandas application programming interface using multi modal inputs. our experience suggests that as these large language models evolve for synthesizing code from intent jigsaw has an important role to play in improving the accuracy of the systems",
+    "Pub Date": "2022-05-27"
+}

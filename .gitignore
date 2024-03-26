@@ -1,3 +1,5 @@
 **/.DS_Store
 /scholarqa/
 /.venv
+scripts/__pycache__/
+allenai-specter/

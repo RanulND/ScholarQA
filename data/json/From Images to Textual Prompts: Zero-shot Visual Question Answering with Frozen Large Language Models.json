@@ -1,0 +1,27 @@
+{
+    "Title": "From Images to Textual Prompts: Zero-shot Visual Question Answering with Frozen Large Language Models",
+    "Doi": "10.1109/CVPR52729.2023.01046",
+    "Authors": [
+        "jiaxian guo",
+        "junnan li",
+        "dongxu li",
+        "anthony meng huat tiong",
+        "boyang li",
+        "dacheng tao",
+        "steven hoi"
+    ],
+    "Key Words": [
+        "training",
+        "visualization",
+        "computer vision",
+        "costs",
+        "codes",
+        "computational modeling",
+        "question answering (information retrieval)",
+        "vision",
+        "language",
+        "reasoning"
+    ],
+    "Abstract": "large language models  large language model  have demonstrated excellent zero shot generalization to new language tasks. however effective utilization of large language model for zero shot visual question answering  visual question answering  remains challenging primarily due to the modality disconnect and task disconnect between the large language model and visual question answering tasks. end to end training on multimodal data may bridge the disconnects but is inflexible and computationally expensive. to address this issue we propose img2llm a plug and play module that provides large language model prompts to enable large language model to perform zeroshot visual question answering tasks without end to end training. we develop large language model agnostic models describe image content as exemplar question answer pairs which prove to be effective large language model prompts. img2llm offers the following benefits  1  it achieves comparable or better performance than methods relying on end to end training. for example we outperform flamingo  by 5.6% on vqav2. on the challenging a okvqa dataset our method outperforms few shot methods by as much as 20%. 2  it flexibly interfaces with a wide range of large language model to perform visual question answering. 3  it eliminates the need to specialize large language model using end to end finetuning and serve highly specialized large language model to end users thereby reducing cost.",
+    "Pub Date": "2023-06-24"
+}
