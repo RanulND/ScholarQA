@@ -2,18 +2,7 @@ import pandas as pd
 from datetime import datetime
 import json
 
-def csvToJson():
-    file_path = "/content/drive/MyDrive/FYP/Code Base/Q&A/DataSet_1.csv"
-
-    df = pd.read_csv(file_path)
-    df.drop(columns=df.columns[0], axis=1, inplace=True)
-    # df['Pub Date'][1] = "17-Jun-23"
-
-    df['Authors'] = df['Authors'].apply(stringsToList)
-    df['Key Words'] = df['Key Words'].apply(stringsToList)
-    df['Abstract'] = df['Abstract'].str.lower()
-    df['Pub Date'] = df['Pub Date'].apply(dateFormatter)
-
+def csvToJson(df):
     output_path = "/content/drive/MyDrive/FYP/Code Base/Q&A/json/"
 
     for index, row in df.iterrows():
