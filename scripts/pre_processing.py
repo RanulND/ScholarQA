@@ -60,7 +60,7 @@ class Preprocssing:
           text = re.sub(pattern, full_word, text)
       return text
 
-  # remobe unwanted characters
+  # remove unwanted characters
   def cleaningText(self,text):
     pattern = r'\[\s*[0-9]+\s*\]'
     cleaned_text = re.sub(pattern,"",text)
