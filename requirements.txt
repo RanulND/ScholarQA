@@ -1,3 +1,5 @@
 json
 langchain
-chromadb
+faiss
+openpyxl
+pandas
