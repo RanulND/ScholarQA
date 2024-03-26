@@ -1,24 +1,22 @@
 import pandas as pd
 from datetime import datetime
 import json
+import os
 
-def csvToJson(df):
-    output_path = "/content/drive/MyDrive/FYP/Code Base/Q&A/json/"
+class json:
+    def __init__(self, df):
+        self.df = df
 
-    for index, row in df.iterrows():
-        row_dict = row.to_dict()
+    def csvToJson(self):
+        current_directory = os.getcwd()
+        output_path = current_directory + '/data/json/'
 
-        json_file_name = f"{output_path}paper_{index + 1}.json"
+        for index, row in self.df.iterrows():
+            row_dict = row.to_dict()
 
-        with open(json_file_name, 'w') as json_file:
-            json.dump(row_dict, json_file)
+            json_file_name = f"{output_path}paper_{index + 1}.json"
 
-        print(f"JSON file '{json_file_name}' created.")
+            with open(json_file_name, 'w') as json_file:
+                json.dump(row_dict, json_file)
 
-def stringsToList(author):
-    return [s.lower().strip() for s in author.split(";")]
-
-def dateFormatter(date):
-    date_obj = datetime.strptime(date, '%d-%b-%y')
-    formatted_date = date_obj.strftime('%Y-%m-%d')
-    return formatted_date
+            print(f"JSON file '{json_file_name}' created.")
