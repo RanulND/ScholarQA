@@ -1,5 +1,5 @@
-from pre_processing import Preprocessing
-from csv_to_json import Json
+from Scripts.pre_processing import Preprocessing
+from Scripts.csv_to_json import Json
 
 class runme:
     
@@ -14,5 +14,5 @@ class runme:
         j = Json(processed_df)
         j.csvToJson()
 
-y = runme('data/raw_abstracts.xlsx','data/abbreviations.txt')
+y = runme('Sample Files/raw_abstracts.xlsx','Sample Files/abbreviations.txt')
 y.process()

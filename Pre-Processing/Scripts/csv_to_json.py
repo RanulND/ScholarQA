@@ -5,22 +5,23 @@ import os
 
 class Json:
     """
-    
     this class is defined to convert the records into individual json files.
-
-    input
-    a datframe that contains all the pre-processed abstracts
-    output
-    json file for eahch record
-
     """
     def __init__(self, df):
+        """
+        Args:
+            df (DataFrame): DataFrame containing records to be converted into JSON files.
+        
+        Output:
+            JSON file for each record.
+        """
+       
         self.df = df
 
     def csvToJson(self):
 
         current_directory = os.getcwd()
-        output_path = current_directory + '/data/json/' # path to store json
+        output_path = current_directory + '/Sample Files/json format/' # path to store json
 
         for index, row in self.df.iterrows():
             row_dict = row.to_dict()

@@ -7,18 +7,20 @@ import re
 class Preprocessing:
 
   """
-    
-    this class is defined to apply basic pre-processing steps for the initial dataframe.
-
-    inputs 
-      file: an excel that contains all the raw abstracts
-      abbr: a text file that contains long forms of the abbreviations
-    output 
-      processed dataframe
-
-    """
+  this class is defined to apply basic pre-processing steps for the initial dataframe/
+  """
 
   def __init__(self,file, abbr):
+
+    """
+        Args:
+            file (str): Path to excel file containing extracted abstracts.
+            abbr (str): Path to text file containing abbreviations.
+        
+        Output:
+            dataframe with processed abstracts.
+        """
+       
     self.file = file
     self.abbr = abbr
     self.df = pd.read_excel(file)
@@ -69,7 +71,7 @@ class Preprocessing:
   def cleaningText(self, text):
     pattern_1 = r'\[\s*[0-9]+\s*\]'
     cleaned_text = re.sub(pattern_1,"",text)
-    pattern_2 = r'\'s'
+    pattern_2 = r'[\'’]s'
     cleaned_text = re.sub(pattern_2,"",cleaned_text)
     pattern_3 = r'([A-Za-z]+)\/([A-Za-z]+)'
     matches = re.findall(pattern_3, cleaned_text)
