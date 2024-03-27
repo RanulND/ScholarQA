@@ -4,8 +4,8 @@ vqa - visual question answering
 kb - knowledge base
 kbs - knowledge base
 vqas - visual question answering
-apr - automated program sepair 
-aprs - automated program sepair 
+apr - automated program repair 
+aprs - automated program repair 
 afs - automated feedback system
 afss - automated feedback system
 ai - artificial intelliegence
