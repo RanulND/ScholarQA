@@ -5,3 +5,4 @@ Pre-Processing/Scripts/__pycache__/
 allenai-specter/
 DataBase/VectorDB/Scripts/__pycache__/
 DataBase/VectorDB/embedding-allenai-specter/
+/models
