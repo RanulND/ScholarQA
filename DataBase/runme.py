@@ -1,4 +1,4 @@
-from Scripts.database import DB
+from VectorDB.Scripts.database import DB
 
 
 # initialize the DB instance

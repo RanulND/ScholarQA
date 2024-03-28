@@ -31,7 +31,7 @@ class DB:
         self.json_folder = json_folder
 
         # specific for scientific literature
-        self.embedding_model = "DataBase/VectorDB/embedding-allenai-specter"
+        self.embedding_model = "Models/embedding-allenai-specter"
 
         # store json files in a list
         self.json_files = [f"{json_folder}/{file}" for file in os.listdir(json_folder) if file.endswith('.json')]
