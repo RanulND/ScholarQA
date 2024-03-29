@@ -40,16 +40,4 @@ class vector_retriever:
                       embeddings=embeddings,
                       allow_dangerous_deserialization=True)
         return db
-    
-    # Function query the loaded db
-    def query_db(self, user_query):
-
-        db = self.load_db()
-        response = db.similarity_search(user_query)
-        response_1 = []
-        for doc in response:
-            response_1.append(f"Content: {doc.page_content}, Metadata: {doc.metadata}")
-        return response_1
-    
-    # pretifying the output
 
