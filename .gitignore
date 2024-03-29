@@ -5,5 +5,5 @@ Pre-Processing/Scripts/__pycache__/
 allenai-specter/
 DataBase/VectorDB/Scripts/__pycache__/
 /models
-/Models
-Chat Bot/Scripts/__pycache__/
+/Models/
+ChatBot/Scripts/__pycache__/
