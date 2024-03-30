@@ -16,5 +16,5 @@ def load_llm():
 def load_retriever():
     retrieverObj = vector_retriever()
     db = retrieverObj.load_db()
-    retriever = db.as_retriever(k=5)
+    retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.75})
     return retriever

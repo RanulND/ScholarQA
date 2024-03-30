@@ -1,9 +1,8 @@
 **/.DS_Store
-/scholarqa/
+/scholar/
 /.venv
 Pre-Processing/Scripts/__pycache__/
 allenai-specter/
 DataBase/VectorDB/Scripts/__pycache__/
-/models
 /Models/
 ChatBot/Scripts/__pycache__/
