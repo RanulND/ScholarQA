@@ -1,5 +1,5 @@
 **/.DS_Store
-/scholar/
+/scholar_venv
 /.venv
 Pre-Processing/Scripts/__pycache__/
 allenai-specter/
