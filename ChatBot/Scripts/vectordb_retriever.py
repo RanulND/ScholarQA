@@ -19,8 +19,8 @@ class vector_retriever:
             vecotr db
         """
 
-        self.model = '../Models/embedding-allenai-specter'
-        self.db = '../DataBase/VectorDB/vectorstore'
+        self.model = 'Models/embedding-allenai-specter'
+        self.db = 'DataBase/VectorDB/vectorstore'
 
 
     # Function for loading the embedding model

@@ -1,9 +1,10 @@
 from Scripts.vectordb_retriever import vector_retriever
 from langchain_community.llms import LlamaCpp
 
+
 def load_llm():
     llm = LlamaCpp(
-    model_path="../Models/llama-7b-chat-q4/llama-2-7b-chat.Q4_0.gguf",
+    model_path="Models/llama-7b-chat-q4/llama-2-7b-chat.Q4_0.gguf",
     temperature=0.01,
     max_tokens=2000,
     top_p=1,
