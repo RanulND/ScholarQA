@@ -54,32 +54,29 @@ def get_prompt_template_2():
     system_prompt_2 = """ 
     You are ScholarQA. 
     You are a helpful assistant for the researchers to query scientific literature on large language models (llms). 
-    You will answer the questions only using the context and the history. 
-    Construct a detailed answer to the question that responds with the highest degree of confidence and most attention to detail. 
-    If the context or the histroy is irrelevant to the question, please do not make assumptions. 
-    Tell the user that the provided information is insufficient to generate a quality answer.
+    Use the following context (delimited by <ctx></ctx>) and the chat history (delimited by <hs></hs>) to answer the question. 
+    Please do not make assumptions. If you don't know tell the user that you don't have enough information to answer.
+        ------
+        <ctx>
+        {context}
+        </ctx>
+        ------
+        <hs>
+        {history}
+        </hs>
+        ------
+        {question}
+        Answer:
+    
     """
+ 
 
-    B_INST, E_INST = "[INST]", '[/INST]'
+    prompt_template = system_prompt_2
 
-    B_SYS  , E_SYS = "<<SYS>>\n" , "\n<</SYS>>\n\n"
-
-    SYSTEM_PROMPT = B_SYS + system_prompt_2 + E_SYS
-
-    instructions = """
-    ---------------------------
-    CONTEXT: {context}
-    ---------------------------
-    HISTORY: {history}
-    ---------------------------
-    QUESTION: {question}
-    ---------------------------
-    Answer: 
-    """
-
-    prompt_template = B_INST + SYSTEM_PROMPT + instructions + E_INST
-
-    prompt = PromptTemplate(input_variables=['context','history','question'], template=prompt_template)
+    prompt = PromptTemplate(
+    input_variables=["history", "context", "question"],
+    template=prompt_template,
+    )
 
     memory = ConversationBufferMemory(input_key='question', memory_key='history', k=5, return_messages=True)
 
