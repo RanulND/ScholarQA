@@ -42,11 +42,6 @@ def get_prompt_template_1():
 
     return prompt
 
-
-"""
-this is the prompt to be used for querying vector db.
-"""
-
 # define system message
 
 def get_prompt_template_2():
@@ -54,7 +49,7 @@ def get_prompt_template_2():
     system_prompt_2 = """ 
     You are ScholarQA. 
     You are a helpful assistant for the researchers to query scientific literature on large language models (llms). 
-    Use the following context (delimited by <ctx></ctx>) and the chat history (delimited by <hs></hs>) to answer the question. 
+    Use only the following context (delimited by <ctx></ctx>) and the chat history (delimited by <hs></hs>) to answer the question. 
     Please do not make assumptions. If you don't know tell the user that you don't have enough information to answer.
         ------
         <ctx>
