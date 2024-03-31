@@ -5,14 +5,15 @@ from langchain.chains import LLMChain
 
 
 def chat_hybrid():
-    question = input("ScholarQA: Enter your question")
     llm = load_llm() # load the llm
     prompt = get_prompt_template_1()
     db = load_retriever()
-
     chain = LLMChain(llm=llm, prompt=prompt)
+    
+    question = input("ScholarQA: Enter your question\n")
+    
     candidate_1 = db.get_relevant_documents(question)
-    candidate_2 = input("ScholarQA: Enter KG data")
+    candidate_2 = input("ScholarQA: Enter KG data\n")
 
     hybrid_answer = chain.run(question=question,
                                 candidate_1=candidate_1,
