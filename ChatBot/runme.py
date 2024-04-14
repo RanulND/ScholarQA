@@ -4,7 +4,7 @@ from Scripts.hybrid_chat import chat_hybrid
 # get the vector db chat
 def runme_vector():
     retrieval_chain = chat_with_vectordb()
-
+    history =[]
     while True:
         query = input("You: ")
         
@@ -12,7 +12,8 @@ def runme_vector():
             print("Exiting the chat session. Have a nice day!")
             break
         
-        answer = retrieval_chain.invoke(query)
+        answer = retrieval_chain.invoke({'question': query})
+        history.append((query, answer))
         result = answer['result'] 
         print("ScholarQA:", result)
 

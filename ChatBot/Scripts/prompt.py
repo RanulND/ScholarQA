@@ -1,4 +1,3 @@
-from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 
 
@@ -60,14 +59,8 @@ def get_prompt_template_2():
     prompt_template = system_prompt_2
 
     prompt = PromptTemplate(
-    input_variables=["history", "context", "question"],
+    input_variables=["context", "question", "history"],
     template=prompt_template,
     )
 
-    memory = ConversationBufferMemory(input_key='question', memory_key='history', k=5, return_messages=True)
-
-    return (
-        prompt,
-        memory
-    )
-
+    return prompt
