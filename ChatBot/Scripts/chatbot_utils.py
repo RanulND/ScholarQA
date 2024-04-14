@@ -9,7 +9,7 @@ def load_llm():
     max_tokens=2000,
     top_p=1,
     # callback_manager=callback_manager,
-    verbose=True,  # Verbose is required to pass to the callback manager
+    verbose=False,  # Verbose is required to pass to the callback manager
     n_ctx = 2048
     )
     return llm

@@ -2,6 +2,7 @@ from langchain.chains import ConversationalRetrievalChain
 from Scripts.prompt import get_prompt_template_2
 from Scripts.chatbot_utils import load_llm,load_retriever
 from langchain.memory import ConversationBufferMemory
+from langchain.chains import RetrievalQA
 
 
 # load the llm
@@ -10,15 +11,14 @@ def chat_with_vectordb():
 
     retriever = load_retriever()
     prompt = get_prompt_template_2()
-    memory = ConversationBufferMemory(input_key='question', memory_key='history', k=5, return_messages=True)
+    memory = ConversationBufferMemory(input_key='question', memory_key='chat_history', k=5, return_messages=True)
 
-    retrieval_chain = ConversationalRetrievalChain.from_llm(llm,
-                                                #chain_type="stuff",
-                                                memory=memory,
+    retrieval_chain = RetrievalQA.from_chain_type(llm,
+                                                chain_type="stuff",
                                                 retriever=retriever,
-                                                combine_docs_chain_kwargs={
+                                                chain_type_kwargs={
+                                                    "memory":memory,
                                                     "prompt": prompt
-                                                },
-                                                get_chat_history=lambda h: h,
+                                                }
                                                 )
     return retrieval_chain

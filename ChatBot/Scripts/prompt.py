@@ -48,7 +48,7 @@ def get_prompt_template_2():
         </ctx>
         ------
         <hs>
-        {history}
+        {chat_history}
         </hs>
         ------
         {question}
@@ -59,7 +59,7 @@ def get_prompt_template_2():
     prompt_template = system_prompt_2
 
     prompt = PromptTemplate(
-    input_variables=["context", "question", "history"],
+    input_variables=["context", "question", "chat_history"],
     template=prompt_template,
     )
 
