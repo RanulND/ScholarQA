@@ -24,7 +24,7 @@ class DB:
         # Define chunk size, overlap and separators
         self.text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=512,
-            chunk_overlap=10,
+            chunk_overlap=60,
             separators=['\n\n', '. ']
         )
 

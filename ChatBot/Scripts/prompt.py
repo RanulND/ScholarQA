@@ -1,6 +1,11 @@
 from langchain.prompts import PromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain.chains import create_history_aware_retriever
+from Scripts.chatbot_utils import load_llm,load_retriever
 
 
+llm = load_llm()
+retriever = load_retriever()
 
 def get_prompt_template_1():
 
@@ -38,29 +43,37 @@ def get_prompt_template_1():
 
 def get_prompt_template_2():
 
-    system_prompt_2 = """ 
-    You are ScholarQA. You are a helpful assistant for the researchers to query scientific literature on large language models (llms). 
-    Use only the following context (delimited by <ctx></ctx>) and the chat history (delimited by <hs></hs>) to answer the question. 
-    Please do not make assumptions. If you don't know the answer tell the user that you don't have enough information to answer.
-        ------
-        <ctx>
-        {context}
-        </ctx>
-        ------
-        <hs>
-        {chat_history}
-        </hs>
-        ------
-        {question}
-        Answer:
-    """
- 
 
-    prompt_template = system_prompt_2
-
-    prompt = PromptTemplate(
-    input_variables=["context", "question", "chat_history"],
-    template=prompt_template,
+    ### Contextualize question ###
+    contextualize_question = """<<SYS>>\nGiven a chat history and the latest user question which might reference context in the chat history, formulate a standalone question which can be understood without the chat history. Do NOT answer the question, just reformulate it if needed and otherwise return it as is.\n<</SYS>>\n\n"""
+    
+    contextualize_q_prompt = ChatPromptTemplate.from_messages(
+        [
+            ("system", contextualize_question),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ]
+    )
+    history_aware_retriever = create_history_aware_retriever(
+        llm, retriever, contextualize_q_prompt
     )
 
-    return prompt
+
+    ### Answer question ###
+    qa_system_prompt = """[INST]
+    <<SYS>>\nYou are ScholarQA.You are a helpful assistant for the researchers to query scientific literature on large language models (llms). Use only the following pieces of retrieved context to answer the question. Please do not make assumptions. If you don't know the answer, just say that you don't know. Keep the answer concise.n<</SYS>>\n\n
+    ---------------------------
+    {context} 
+    ---------------------------
+    [/INST]
+    """
+    
+    qa_prompt = ChatPromptTemplate.from_messages(
+        [
+            ("system", qa_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ]
+    )
+
+    return history_aware_retriever, qa_prompt
