@@ -1,17 +1,16 @@
 from Scripts.vectordb_retriever import vector_retriever
-from langchain_community.llms import LlamaCpp
-
+from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
+import os
 
 def load_llm():
-    llm = LlamaCpp(
-    model_path="Models/llama-7b-chat-q4/llama-2-7b-chat.Q4_0.gguf",
-    temperature=0.01,
-    max_tokens=2000,
-    top_p=1,
-    # callback_manager=callback_manager,
-    verbose=False,  # Verbose is required to pass to the callback manager
-    n_ctx = 2048
-    )
+    load_dotenv()
+    OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+    llm = ChatOpenAI(model="gpt-3.5-turbo",
+                     temperature=0.1,
+                     max_tokens = 2000,
+                     top_p = 0.9
+                     )
     return llm
 
 def load_retriever():
