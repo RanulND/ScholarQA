@@ -1,7 +1,8 @@
 from Scripts.vectordb_retriever import vector_retriever
-from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
 import os
+
 
 def load_llm():
     load_dotenv()
