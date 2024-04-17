@@ -1,11 +1,11 @@
 from Scripts.prompt import get_prompt_template_1
-from Scripts.chatbot_utils import load_llm,load_retriever
+from Scripts.chatbot_utils import load_gpt,load_retriever
 from langchain.chains import LLMChain
 
 
 
 def chat_hybrid():
-    llm = load_llm() # load the llm
+    llm = load_gpt() # load the llm
     prompt = get_prompt_template_1()
     db = load_retriever()
     chain = LLMChain(llm=llm, prompt=prompt)

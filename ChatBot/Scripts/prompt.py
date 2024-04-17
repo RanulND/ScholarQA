@@ -1,10 +1,10 @@
 from langchain.prompts import PromptTemplate
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever
-from Scripts.chatbot_utils import load_llm,load_retriever
+from Scripts.chatbot_utils import load_gpt,load_retriever,load_llama2_7b
 
 
-llm = load_llm()
+# llm = load_llama2_7b()
 retriever = load_retriever()
 
 def get_prompt_template_1():
@@ -33,7 +33,7 @@ def get_prompt_template_1():
 
 # define system message
 
-def get_prompt_template_2():
+def get_prompt_template_2(llm):
 
 
     ### Contextualize question ###
