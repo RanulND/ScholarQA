@@ -3,6 +3,6 @@
 /.venv
 allenai-specter/
 /Models/
-**/__pycache__/
+**/**/__pycache__/
 **/**.ipynb
 /.env

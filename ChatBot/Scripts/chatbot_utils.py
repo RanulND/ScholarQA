@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_community.llms import LlamaCpp
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, GenerationConfig
-from langchain import HuggingFacePipeline
+from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
 import os
 
 def load_gpt():
@@ -49,9 +49,35 @@ def load_llama2_7b():
     
     return llm
 
+def load_mistral_7b_q4():
+    llm = LlamaCpp(
+    model_path="Models/mistral-7b-q4/mistral-7b-v0.1.Q4_0.gguf",
+    temperature=0.01,
+    max_tokens=2000,
+    top_p=1,
+    # callback_manager=callback_manager,
+    verbose=False,  # Verbose is required to pass to the callback manager
+    n_ctx = 2048,
+    )
+    
+    return llm
+
+def load_falcon_7b_q4():
+    llm = LlamaCpp(
+    model_path="Models/falcon-7b-q4/ggml-tiiuae-falcon-7b-Q4_0.gguf",
+    temperature=0.01,
+    max_tokens=2000,
+    top_p=1,
+    # callback_manager=callback_manager,
+    verbose=False,  # Verbose is required to pass to the callback manager
+    n_ctx = 2048,
+    )
+    
+    return llm
+
 def load_retriever():
     retrieverObj = vector_retriever()
     db = retrieverObj.load_db()
-    retriever = db.as_retriever()
+    retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.5})
     return retriever
 # search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.5}

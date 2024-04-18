@@ -26,7 +26,7 @@ class Json:
         for index, row in self.df.iterrows():
             row_dict = row.to_dict()
 
-            title = row_dict['Title']
+            title = row_dict['Title'].replace('/',"-")
         
             json_file_name = f"{output_path}{title}.json"
 

@@ -1,14 +1,14 @@
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from Scripts.prompt import get_prompt_template_2
-from Scripts.chatbot_utils import load_gpt,load_llama2_7b,load_llama2_7b_q4
+from Scripts.chatbot_utils import load_gpt
 from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 # load the llm
 def chat_with_vectordb():
-    llm = load_llama2_7b()
+    llm = load_gpt()
 
     history_aware_retriever, qa_prompt = get_prompt_template_2(llm)
     

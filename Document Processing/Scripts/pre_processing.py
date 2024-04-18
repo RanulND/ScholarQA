@@ -24,7 +24,8 @@ class Preprocessing:
     self.file = file
     self.abbr = abbr
     self.df = pd.read_excel(file)
-    self.df.drop(columns=self.df.columns[0], axis=1, inplace=True)
+    # self.df.drop(columns=self.df.columns[0], axis=1, inplace=True)
+    self.df.dropna(how='any', inplace=True)
 
   # to get authors and keywords into a list into the
   def stringsToList(self, author):
