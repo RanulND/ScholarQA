@@ -51,7 +51,7 @@ def load_llama2_7b():
 
 def load_mistral_7b_q4():
     llm = LlamaCpp(
-    model_path="Models/mistral-7b-q4/mistral-7b-v0.1.Q4_0.gguf",
+    model_path="Models/mistral-7b-q4/mistral-7b-instruct-v0.2.Q4_0.gguf",
     temperature=0.01,
     max_tokens=2000,
     top_p=1,
@@ -78,5 +78,5 @@ def load_falcon_7b_q4():
 def load_retriever():
     retrieverObj = vector_retriever()
     db = retrieverObj.load_db()
-    retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.5, 'k':5})
+    retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.75, 'k':20})
     return retriever

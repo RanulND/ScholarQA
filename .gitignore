@@ -4,5 +4,6 @@
 allenai-specter/
 /Models/
 **/**/__pycache__/
-**/**.ipynb
+# **/**.ipynb
 /.env
+**/test.ipynb
