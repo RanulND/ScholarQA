@@ -14,7 +14,7 @@ def chat_with_vectordb():
     
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
 
-    rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)  
+    rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)  #change name
     
     # to store chat history
     store = {}

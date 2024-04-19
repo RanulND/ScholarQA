@@ -12,7 +12,8 @@ def chat_hybrid():
     
     question = input("ScholarQA: Enter your question\n")
     
-    candidate_1 = db.get_relevant_documents(question)
+    candidate_1 = db.get_relevant_documents(question) # look for symantix retreival 
+    #https://python.langchain.com/docs/modules/data_connection/retrievers/self_query/
     candidate_2 = input("ScholarQA: Enter KG data\n")
 
     hybrid_answer = chain.run(question=question,

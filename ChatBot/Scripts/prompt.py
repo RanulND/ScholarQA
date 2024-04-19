@@ -1,7 +1,7 @@
 from langchain.prompts import PromptTemplate
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever
-from Scripts.chatbot_utils import load_gpt,load_retriever,load_llama2_7b
+from Scripts.chatbot_utils import load_retriever
 
 
 # llm = load_llama2_7b()
