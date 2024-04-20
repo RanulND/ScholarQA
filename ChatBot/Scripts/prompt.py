@@ -4,8 +4,71 @@ from langchain.chains import create_history_aware_retriever
 from Scripts.chatbot_utils import load_retriever
 
 
-# llm = load_llama2_7b()
 retriever = load_retriever()
+
+# define system messages; first phase
+
+llm_prompt = """You are ScholarQA.\
+        You are a helpful assistant for researchers who are querying computer science literature on large language models(LLMs).\
+            Use only the following pieces of retrieved context to say yes or no to the question. Please do not make assumptions.\
+                If you don't know the answer, just say that you don't know.
+                
+    {context} 
+    """
+    
+edge_prompt = """You are ScholarQA.\
+        You are a helpful assistant for researchers who are querying computer science literature on edge computing.\
+            Use only the following pieces of retrieved context to say yes or no to the question. Please do not make assumptions.\
+                If you don't know the answer, just say that you don't know.
+                
+    {context} 
+    """
+    
+quantum_prompt = """You are ScholarQA.\
+        You are a helpful assistant for researchers who are querying computer science literature on quantum computing.\
+            Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
+                If you don't know the answer, just say that you don't know. Keep the answer concise.
+                
+    {context} 
+    """
+
+def get_prompt_template_2(llm):
+
+
+    ### Contextualize question ###
+    contextualize_question = """Given a chat history and the latest user question which might reference context in the chat history,\
+        formulate a standalone question which can be understood without the chat history. Do NOT answer the question,\
+            just reformulate it if needed and otherwise return it as is."""
+    
+    contextualize_q_prompt = ChatPromptTemplate.from_messages(
+        [
+            ("system", contextualize_question),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ]
+    )
+    history_aware_retriever = create_history_aware_retriever(
+        llm, retriever, contextualize_q_prompt
+    )
+
+
+    ### Answer question ###
+    qa_system_prompt = llm_prompt
+    
+    qa_prompt = ChatPromptTemplate.from_messages(
+        [
+            ("system", qa_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ]
+    )
+
+    return history_aware_retriever, qa_prompt
+
+
+
+# define system messages; second phase
+
 
 def get_prompt_template_1():
 
@@ -30,44 +93,3 @@ def get_prompt_template_1():
     prompt = PromptTemplate(input_variables=['candidate_1','candidate_2','question'], template=system_prompt_1)
 
     return prompt
-
-# define system message
-
-def get_prompt_template_2(llm):
-
-
-    ### Contextualize question ###
-    contextualize_question = """You are a helpful assistant for researchers who are querying computer science literature on large language modelling.\
-        Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
-        If you don't know the answer, just say that you don't know. Keep the answer concise."""
-    
-    contextualize_q_prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", contextualize_question),
-            MessagesPlaceholder("chat_history"),
-            ("human", "{input}"),
-        ]
-    )
-    history_aware_retriever = create_history_aware_retriever(
-        llm, retriever, contextualize_q_prompt
-    )
-
-
-    ### Answer question ###
-    qa_system_prompt = """You are ScholarQA.\
-        You are a helpful assistant for researchers who are querying computer science literature on large language modelling.\
-            Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
-                If you don't know the answer, just say that you don't know. Keep the answer concise.
-                
-    {context} 
-    """
-    
-    qa_prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", qa_system_prompt),
-            MessagesPlaceholder("chat_history"),
-            ("human", "{input}"),
-        ]
-    )
-
-    return history_aware_retriever, qa_prompt

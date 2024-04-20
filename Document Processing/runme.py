@@ -14,5 +14,5 @@ class runme:
         j = Json(processed_df)
         j.csvToJson()
 
-y = runme('Sample Files/llm.xlsx','Sample Files/abbreviations.txt')
+y = runme('Sample Files/raw data/llm.xlsx','Sample Files/abbreviations.txt')
 y.process()

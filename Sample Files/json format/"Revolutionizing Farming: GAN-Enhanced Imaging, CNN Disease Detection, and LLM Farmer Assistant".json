@@ -1,1 +1,20 @@
-{"Title": "\"Revolutionizing Farming: GAN-Enhanced Imaging, CNN Disease Detection, and LLM Farmer Assistant\"", "Doi": "10.1109/IC457434.2024.10486501", "Authors": ["c. dhavale", "t. pawar", "a. singh", "s. pole", "k. sabat"], "Key Words": ["crop disease recognition", "generative ai", "cnn", "langchain llama model", "chatbot"], "Abstract": "crop disease recognition is a crucial aspect of modern agriculture that can significantly impact crop yield quality and overall food security. this paper introduces an innovative approach to crop disease recognition and farmer support by combining generative artificial intelliegence and langchain llama model for chatbot development. in the proposed system generative artificial intelliegence specifically deep learning models are employed to analyze images of crop leaves for early signs of diseases. this approach enhances the accuracy and efficiency of disease diagnosis enabling farmers to take timely corrective actions and reduce the use of pesticides. a generative adversarial network  gan  is employed for image augmentation due to the limited dataset size. a convolutional neural network  cnn  is utilized for precise crop disease recognition based on image analysis. to bridge the gap between technology and farmers the langchain llama model a state of the art conversational artificial intelliegence model is integrated to create an interactive and user friendly chatbot interface. the results of this research project demonstrate the potential of cutting edge artificial intelliegence technology to transform agriculture making it more accessible efficient and environmentally friendly. by empowering farmers with a sophisticated chatbot interface this system paves the way for a smarter and more sustainable agricultural future.", "Pub Date": "2024-04-04"}
+{
+    "Title": "\"Revolutionizing Farming: GAN-Enhanced Imaging, CNN Disease Detection, and LLM Farmer Assistant\"",
+    "Doi": "10.1109/IC457434.2024.10486501",
+    "Authors": [
+        "c. dhavale",
+        "t. pawar",
+        "a. singh",
+        "s. pole",
+        "k. sabat"
+    ],
+    "Key Words": [
+        "crop disease recognition",
+        "generative ai",
+        "cnn",
+        "langchain llama model",
+        "chatbot"
+    ],
+    "Abstract": "crop disease recognition is a crucial aspect of modern agriculture that can significantly impact crop yield quality and overall food security. this paper introduces an innovative approach to crop disease recognition and farmer support by combining generative ai and langchain llama model for chatbot development. in the proposed system generative ai specifically deep learning models are employed to analyze images of crop leaves for early signs of diseases. this approach enhances the accuracy and efficiency of disease diagnosis enabling farmers to take timely corrective actions and reduce the use of pesticides. a generative adversarial network  gan  is employed for image augmentation due to the limited dataset size. a convolutional neural network  cnn  is utilized for precise crop disease recognition based on image analysis. to bridge the gap between technology and farmers the langchain llama model a state of the art conversational ai model is integrated to create an interactive and user friendly chatbot interface. the results of this research project demonstrate the potential of cutting edge ai technology to transform agriculture making it more accessible efficient and environmentally friendly. by empowering farmers with a sophisticated chatbot interface this system paves the way for a smarter and more sustainable agricultural future.",
+    "Pub Date": "2024-04-04"
+}
