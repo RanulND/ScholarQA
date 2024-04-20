@@ -55,9 +55,9 @@ def get_prompt_template_2(llm):
 
     ### Answer question ###
     qa_system_prompt = """You are ScholarQA.\
-        You are a helpful assistant for the researchers to query scientific literature on large language models (llms).\
-            Use only the following pieces of retrieved context to answer the question.\
-                Please do not make assumptions. If you don't know the answer, just say that you don't know. Keep the answer concise.
+        You are a helpful assistant for researchers who are querying computer science literature on quantum computing.\
+            Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
+                If you don't know the answer, just say that you don't know. Keep the answer concise.
                 
     {context} 
     """

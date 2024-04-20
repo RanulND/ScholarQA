@@ -78,5 +78,5 @@ def load_falcon_7b_q4():
 def load_retriever():
     retrieverObj = vector_retriever()
     db = retrieverObj.load_db()
-    retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.75, 'k':20})
+    retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"score_threshold": 0.5, 'k':10})
     return retriever
