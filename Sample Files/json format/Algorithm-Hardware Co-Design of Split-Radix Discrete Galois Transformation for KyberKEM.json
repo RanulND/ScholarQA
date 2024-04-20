@@ -1,1 +1,23 @@
-{"Title": "Algorithm-Hardware Co-Design of Split-Radix Discrete Galois Transformation for KyberKEM", "Authors": ["g. li", "d. chen", "g. mao", "w. dai", "a. i. sanka", "r. c. c. cheung"], "Pub Date": "2023-12-08", "Abstract": "kyberkem is one of the final round key encapsulation mechanisms in the nist post quantum cryptography competition. number theoretic transform  ntt  as the computing bottleneck of kyberkem has been widely studied. discrete galois transformation  dgt  is a variant of ntt that reduces transform length into half but requires more multiplication operations than the latest ntt algorithm in theoretical analysis. this paper proposes the split radix dgt a novel dgt variant utilizing the split radix method to reduce the computing complexity without compromising the transform length. specifically for length 128 polynomial the split radix dgt algorithm saves at least 10% multiplication operations compared with the latest ntt algorithm in theoretical analysis. furthermore we proposed a unified split radix dgt processor with the dedicated stream permutation network for kyberkem and implemented it on the xilinx artix 7 fpga. the processor achieves at least 49.4% faster transformation and 65.3% faster component wise multiplication with at most 87% and 32% lut ntt area time product and lut cwm area time product compared with the state of the art polynomial multipliers in kyberkem with the same bfu setting on similar platforms. lastly we designed a highly efficient kyberkem architecture using the proposed split radix dgt processor. the implementation results on artix 7 fpga show significant performance improvements over the state of the art kyberkem designs.", "Doi": "10.1109/TETC.2023.3270971", "Key Words": ["discrete galois transform", "split-radix", "negative wrapped convolution", "post-quantum cryptography", "key encapsulation mechanism", "hardware", "fpga"]}
+{
+    "Title": "Algorithm-Hardware Co-Design of Split-Radix Discrete Galois Transformation for KyberKEM",
+    "Authors": [
+        "g. li",
+        "d. chen",
+        "g. mao",
+        "w. dai",
+        "a. i. sanka",
+        "r. c. c. cheung"
+    ],
+    "Pub Date": "2023-12-08",
+    "Abstract": "kyberkem is one of the final round key encapsulation mechanisms in the nist post quantum cryptography competition. number theoretic transform  ntt  as the computing bottleneck of kyberkem has been widely studied. discrete galois transformation  dgt  is a variant of ntt that reduces transform length into half but requires more multiplication operations than the latest ntt algorithm in theoretical analysis. this paper proposes the split radix dgt a novel dgt variant utilizing the split radix method to reduce the computing complexity without compromising the transform length. specifically for length 128 polynomial the split radix dgt algorithm saves at least 10% multiplication operations compared with the latest ntt algorithm in theoretical analysis. furthermore we proposed a unified split radix dgt processor with the dedicated stream permutation network for kyberkem and implemented it on the xilinx artix 7 fpga. the processor achieves at least 49.4% faster transformation and 65.3% faster component wise multiplication with at most 87% and 32% lut ntt area time product and lut cwm area time product compared with the state of the art polynomial multipliers in kyberkem with the same bfu setting on similar platforms. lastly we designed a highly efficient kyberkem architecture using the proposed split radix dgt processor. the implementation results on artix 7 fpga show significant performance improvements over the state of the art kyberkem designs.",
+    "Doi": "10.1109/TETC.2023.3270971",
+    "Key Words": [
+        "discrete galois transform",
+        "split-radix",
+        "negative wrapped convolution",
+        "post-quantum cryptography",
+        "key encapsulation mechanism",
+        "hardware",
+        "fpga"
+    ]
+}
