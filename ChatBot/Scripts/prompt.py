@@ -4,7 +4,6 @@ from langchain.chains import create_history_aware_retriever
 from Scripts.chatbot_utils import load_retriever
 
 
-# llm = load_llama2_7b()
 retriever = load_retriever()
 
 def get_prompt_template_1():
@@ -33,6 +32,22 @@ def get_prompt_template_1():
 
 # define system message
 
+llm_prompt = """You are ScholarQA.\
+        You are a helpful assistant for researchers who are querying computer science literature on large language models(LLMs).\
+            Use only the following pieces of retrieved context to say yes or no to the question. Please do not make assumptions.\
+                If you don't know the answer, just say that you don't know.
+                
+    {context} 
+    """
+    
+quantum_prompt = """You are ScholarQA.\
+        You are a helpful assistant for researchers who are querying computer science literature on quantum computing.\
+            Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
+                If you don't know the answer, just say that you don't know. Keep the answer concise.
+                
+    {context} 
+    """
+
 def get_prompt_template_2(llm):
 
 
@@ -54,13 +69,7 @@ def get_prompt_template_2(llm):
 
 
     ### Answer question ###
-    qa_system_prompt = """You are ScholarQA.\
-        You are a helpful assistant for researchers who are querying computer science literature on quantum computing.\
-            Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
-                If you don't know the answer, just say that you don't know. Keep the answer concise.
-                
-    {context} 
-    """
+    qa_system_prompt = llm_prompt
     
     qa_prompt = ChatPromptTemplate.from_messages(
         [
@@ -71,3 +80,5 @@ def get_prompt_template_2(llm):
     )
 
     return history_aware_retriever, qa_prompt
+
+
