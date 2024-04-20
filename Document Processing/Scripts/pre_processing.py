@@ -26,6 +26,7 @@ class Preprocessing:
     self.df = pd.read_excel(file)
     # self.df.drop(columns=self.df.columns[0], axis=1, inplace=True)
     self.df.dropna(how='any', inplace=True)
+    self.df.drop_duplicates(inplace=True)
 
   # to get authors and keywords into a list into the
   def stringsToList(self, author):
@@ -68,7 +69,7 @@ class Preprocessing:
           text = re.sub(pattern, full_word, text)
       return text
 
-  # remobe unwanted characters
+  # remove unwanted characters
   def cleaningText(self, text):
     pattern_1 = r'\[\s*[0-9]+\s*\]'
     cleaned_text = re.sub(pattern_1,"",text)
@@ -86,7 +87,7 @@ class Preprocessing:
   def apply_processing(self):
     self.df['Abstract'] = self.df['Abstract'].apply(self.removeUnwantedCharacters)
     self.df['Abstract'] = self.df['Abstract'].str.lower()
-    self.df['Abstract'] = self.df['Abstract'].apply(self.replace_abbreviations)
+    # self.df['Abstract'] = self.df['Abstract'].apply(self.replace_abbreviations)
     self.df['Abstract'] = self.df['Abstract'].apply(self.cleaningText)
     
 
