@@ -8,6 +8,7 @@ retriever = load_retriever()
 
 # define system messages; first phase
 
+# for LLM questions
 llm_prompt = """You are ScholarQA.\
         You are a helpful assistant for researchers who are querying computer science literature on large language models(LLMs).\
             Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
@@ -16,7 +17,8 @@ llm_prompt = """You are ScholarQA.\
                 
     {context} 
     """
-        
+    
+# for edge computing questions    
 edge_prompt = """You are ScholarQA.\
         You are a helpful assistant for researchers who are querying computer science literature on edge computing.\
             Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
@@ -25,7 +27,8 @@ edge_prompt = """You are ScholarQA.\
                 
     {context} 
     """
-    
+
+# for quantum computing questions    
 quantum_prompt = """You are ScholarQA.\
         You are a helpful assistant for researchers who are querying computer science literature on quantum computing.\
             Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
