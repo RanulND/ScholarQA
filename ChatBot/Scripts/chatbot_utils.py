@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_community.llms import LlamaCpp
 import os
+from transformers import AutoModel
 
 def load_gpt():
     load_dotenv()
@@ -42,7 +43,20 @@ def load_mistral_7b_q4():
 
 def load_falcon_7b_q4():
     llm = LlamaCpp(
-    model_path="Models/falcon-7b-q4/ggml-tiiuae-falcon-7b-Q4_0.gguf",
+    model_path="Models/falcon-7b-q4/tiiuae-falcon-7b-instruct-Q4_K_S.gguf",
+    temperature=0.01,
+    max_tokens=2000,
+    top_p=1,
+    # callback_manager=callback_manager,
+    verbose=False,  # Verbose is required to pass to the callback manager
+    n_ctx = 2048,
+    )
+    
+    return llm
+
+def load_bloom_560m_q4():
+    llm = LlamaCpp(
+    model_path="Models/bloom-560m-q4/bloom-560m.q4_k_m.gguf",
     temperature=0.01,
     max_tokens=2000,
     top_p=1,
