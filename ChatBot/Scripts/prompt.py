@@ -37,13 +37,36 @@ quantum_prompt = """You are ScholarQA.\
     {context} 
     """
 
+### Contextualize question ###
+contextualize_question = """Given a chat history and the latest user question which might reference context in the chat history,\
+    formulate a standalone question which can be understood without the chat history. Do NOT answer the question,\
+        just reformulate it if needed and otherwise return it as is."""
+        
+
+# prompts for mistral llm
+mistral_llm_prompt = """<s>[INST] You are a helpful assistant for researchers who are querying computer science literature on large language modelling(LLM).\
+    Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
+    These are binary questions. So your answer should be either yes/no. But if you don't know the answer, \
+    just say that you don't know. 
+    {context} [/INST] \
+    Model answer: </s>
+"""
+
+mistral_edge_prompt = """<s>[INST] You are a helpful assistant for researchers who are querying computer science literature on edge computing.\
+    Use only the following pieces of retrieved context to answer the question. Please do not make assumptions.\
+    These are binary questions. So your answer should be either yes/no. But if you don't know the answer, \
+    just say that you don't know. 
+    {context} [/INST] \
+    Model answer: </s>
+"""
+
+### Contextualize question - Mistral ###
+contextualize_mistral_question = """<s>[INST] Given a chat history and the latest user question which might reference context in the chat history,\
+    formulate a standalone question which can be understood without the chat history. Do NOT answer the question,\
+        just reformulate it if needed and otherwise return it as is. [/INST] </s>
+"""
+
 def get_prompt_template_2(llm):
-
-
-    ### Contextualize question ###
-    contextualize_question = """Given a chat history and the latest user question which might reference context in the chat history,\
-        formulate a standalone question which can be understood without the chat history. Do NOT answer the question,\
-            just reformulate it if needed and otherwise return it as is."""
     
     contextualize_q_prompt = ChatPromptTemplate.from_messages(
         [
@@ -58,7 +81,7 @@ def get_prompt_template_2(llm):
 
 
     ### Answer question ###
-    qa_system_prompt = llm_prompt
+    qa_system_prompt = mistral_edge_prompt
     
     qa_prompt = ChatPromptTemplate.from_messages(
         [

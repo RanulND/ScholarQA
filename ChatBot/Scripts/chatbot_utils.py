@@ -38,12 +38,25 @@ def load_mistral_7b_q4():
     verbose=False,  # Verbose is required to pass to the callback manager
     n_ctx = 2048,
     )
-    
+
     return llm
 
 def load_falcon_7b_q4():
     llm = LlamaCpp(
     model_path="Models/falcon-7b-q4/tiiuae-falcon-7b-instruct-Q4_K_S.gguf",
+    temperature=0.01,
+    max_tokens=2000,
+    top_p=1,
+    # callback_manager=callback_manager,
+    verbose=False,  # Verbose is required to pass to the callback manager
+    n_ctx = 2048,
+    )
+
+    return llm
+
+def load_orca_mini_7b_q4():
+    llm = LlamaCpp(
+    model_path="Models/orca-mini-7b-q4/orca_mini_v3_7b.Q4_0.gguf",
     temperature=0.01,
     max_tokens=2000,
     top_p=1,
@@ -65,6 +78,19 @@ def load_bloom_560m_q4():
     n_ctx = 2048,
     )
     
+    return llm
+
+def load_llama3_8b_q4():
+    llm = LlamaCpp(
+    model_path="Models/llama-3-8b-q4/Meta-Llama-3-8B-Instruct.Q4_K_S.gguf",
+    temperature=0.01,
+    max_tokens=2000,
+    top_p=1,
+    # callback_manager=callback_manager,
+    verbose=False,  # Verbose is required to pass to the callback manager
+    n_ctx = 2048,
+    )
+
     return llm
 
 def load_retriever():
