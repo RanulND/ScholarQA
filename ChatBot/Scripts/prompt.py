@@ -6,6 +6,9 @@ from Scripts.chatbot_utils import load_retriever
 
 retriever = load_retriever()
 
+# follow the below template format if you use Mistral of Falcon
+# <s>[INST] Instruction [/INST] Model answer</s>[INST] Follow-up instruction [/INST]   
+
 # define system messages; first phase
 
 # for LLM questions
