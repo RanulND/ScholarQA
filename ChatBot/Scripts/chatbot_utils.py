@@ -38,7 +38,7 @@ def load_mistral_7b_q4():
     verbose=False,  # Verbose is required to pass to the callback manager
     n_ctx = 2048,
     )
-
+    print("mistral hello")
     return llm
 
 def load_falcon_7b_q4():

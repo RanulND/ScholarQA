@@ -84,7 +84,7 @@ def get_prompt_template_2(llm):
 
 
     ### Answer question ###
-    qa_system_prompt = mistral_edge_prompt
+    qa_system_prompt = edge_prompt
     
     qa_prompt = ChatPromptTemplate.from_messages(
         [

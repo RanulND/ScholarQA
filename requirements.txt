@@ -14,3 +14,4 @@ python-dotenv
 langchain-openai
 langchain_experimental
 text_generation
+neo4j
