@@ -22,7 +22,8 @@ Contains the scripts used for developing the chatbot.
    2.1 Knowledge Graph
   -   Contains the script used to transform cypher text into Neo4J Knowledge Graph representations.<br>
   -   In this stage of the research knowledge graphs are not implemented fully. So please consider this as a testing phase and prioritize the vector db.
-   2.2 VectorDB
+
+      2.2 VectorDB
   
   - Contains the script used to embed document text into vectors and store them in the FAISS vector db.
   - Please note that all the documents are first represented using the JSON format before embedding.
