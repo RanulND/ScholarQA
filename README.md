@@ -19,14 +19,13 @@ Contains the scripts used for developing the chatbot.
 - `vectordb_retriever.py`:  This is to do a vector search in the FAISS vector db when user inputs a question.
 
 2. DataBase <br> <br>
-   2.1 Knowledge Graph
-  -   Contains the script used to transform cypher text into Neo4J Knowledge Graph representations.<br>
-  -   In this stage of the research knowledge graphs are not implemented fully. So please consider this as a testing phase and prioritize the vector db.
+      2.1 Knowledge Graph
+    -   Contains the script used to transform cypher text into Neo4J Knowledge Graph representations.<br>
+    -   In this stage of the research knowledge graphs are not implemented fully. So please consider this as a testing phase and prioritize the vector db.
 
       2.2 VectorDB
-  
-  - Contains the script used to embed document text into vectors and store them in the FAISS vector db.
-  - Please note that all the documents are first represented using the JSON format before embedding.
+    - Contains the script used to embed document text into vectors and store them in the FAISS vector db.
+    - Please note that all the documents are first represented using the JSON format before embedding.
  
 3. Document Processing
 - Includes some of the pre processing steps carried out on the documents.
