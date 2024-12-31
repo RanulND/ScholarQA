@@ -2,11 +2,11 @@
 <div align="center">
   <h1>Comparing the Performance of LLMs in RAG-Based Question-Answering: A Case Study in Computer Science Literature</h1>
 
-  This is the repo containing all the codes and datasets used for the paper titles "Comparing the Performance of LLMs in RAG-Based Question-Answering: A Case Study in Computer Science Literature" presented at the 5th International Conference on Artificial Intelligence in Education Technology. [access the full paper here](10.1007/978-981-97-9255-9_26)
+  This is the repo containing all the codes and datasets used for the paper titled "Comparing the Performance of LLMs in RAG-Based Question-Answering: A Case Study in Computer Science Literature" presented at the 5th International Conference on Artificial Intelligence in Education Technology hosted by University of Barcelona. [access the full paper here](https://link.springer.com/chapter/10.1007/978-981-97-9255-9_26)
   <br></br>  
 </div>
 
-This paper compares the perfromance of popular open-source LLMs such as `Mistral-7b-instruct`, `LLaMa2-7b-chat`, `Falcon-7b-instruct` and `Orca-mini-v3-7b`, and OpenAI’s trending `GPT-3.5` in RAG based question-answering.
+This paper compares the perfromance of popular open-source LLMs such as `Mistral-7b-instruct`, `LLaMa2-7b-chat`, `Falcon-7b-instruct` and `Orca-mini-v3-7b`, and OpenAI’s trending `GPT-3.5` in RAG based question-answering. <br>
 
 ## 🌟 Guide to the repo
 
