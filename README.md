@@ -14,16 +14,15 @@ This paper compares the perfromance of popular open-source LLMs such as `Mistral
 Contains the scripts used for developing the chatbot.
 - `chatbot_utils.py`: Contains the parameters set for each LLM
 - `hybrid_chat.py`: The script to be used with a hybrid approach which uses answer candidates from knowledge graphs and langchain LLMchain to generate the answer.
-- `prompt.py`: Contains user defined prompts to match different secenarios/LLMs
-- `vectort_chat,py`: This creates the chat infrastructure by calling the chat history and vecot db retrived documents to answer the questions.
+- `prompt.py`: Contains user defined prompts to match different scenarios/LLMs
+- `vector_chat.py`: This creates the chat infrastructure by calling the chat history and vecot db retreived documents to answer the questions.
 - `vectordb_retriever.py`:  This is to do a vector search in the FAISS vector db when user inputs a question.
 
 2. DataBase <br> <br>
-  2.1 Knowledge Graph
+   2.1 Knowledge Graph
   -   Contains the script used to transform cypher text into Neo4J Knowledge Graph representations.<br>
   -   In this stage of the research knowledge graphs are not implemented fully. So please consider this as a testing phase and prioritize the vector db.
-
-  2.2 VectorDB
+   2.2 VectorDB
   
   - Contains the script used to embed document text into vectors and store them in the FAISS vector db.
   - Please note that all the documents are first represented using the JSON format before embedding.
@@ -38,7 +37,7 @@ Contains the scripts used for developing the chatbot.
 
 5. Sample Files
 - Contains some of the documents and their JSON docs we used to test the chatbot functionality.
-- Please note all our LLM propost are engineered to answer the questions from the domanis covered in the sample data: `LLMs`, `Quantum Computing`, `Edge Computing`
+- Please note all our LLM propost are engineered to answer the questions from the domains covered in the sample data: `LLMs`, `Quantum Computing`, `Edge Computing`
 
 ## 🛠 Run it
 
